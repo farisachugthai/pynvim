@@ -40,9 +40,9 @@ sub-folders at once, try this (replace '/path/to' as appropriate):
 """
 
 import logging
-from optparse import OptionParser
 import re
 import sys
+from optparse import OptionParser
 
 # logging level names and values
 LEVELS = ['DEBUG', 'INFO', 'WARN', 'WARNING', 'ERROR', 'CRITICAL']

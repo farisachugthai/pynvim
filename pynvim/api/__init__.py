@@ -10,6 +10,5 @@ from pynvim.api.nvim import Nvim, NvimError
 from pynvim.api.tabpage import Tabpage
 from pynvim.api.window import Window
 
-
 __all__ = ('Nvim', 'Buffer', 'Window', 'Tabpage', 'NvimError',
            'decode_if_bytes', 'walk')

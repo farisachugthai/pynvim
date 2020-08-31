@@ -29,8 +29,8 @@ debug, info, warn = (logger.debug, logger.info, logger.warning,)
 
 loop_cls = asyncio.SelectorEventLoop
 if os.name == 'nt':
-    from asyncio.windows_utils import PipeHandle
     import msvcrt
+    from asyncio.windows_utils import PipeHandle
 
     # On windows use ProactorEventLoop which support pipes and is backed by the
     # more powerful IOCP facility

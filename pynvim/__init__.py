@@ -14,7 +14,6 @@ from pynvim.plugin import (Host, autocmd, command, decode, encoding, function,
                            plugin, rpc_export, shutdown_hook)
 from pynvim.util import VERSION, Version
 
-
 __all__ = ('tcp_session', 'socket_session', 'stdio_session', 'child_session',
            'start_host', 'autocmd', 'command', 'encoding', 'decode',
            'function', 'plugin', 'rpc_export', 'Host', 'Nvim', 'NvimError',

@@ -1,7 +1,13 @@
 Nvim Class
 ==========
 
-An instance of this class is used by remote plugins.
+.. currentmodule:: pynvim.api.nvim
 
-.. autoclass:: pynvim.api.Nvim
+.. class:: Nvim
+   :noindex:
+
+   An instance of this class is used by remote plugins.
+
+.. automodule:: pynvim.api.nvim
    :members:
+

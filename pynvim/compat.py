@@ -4,7 +4,6 @@ import sys
 import warnings
 from imp import find_module as original_find_module
 
-
 IS_PYTHON3 = sys.version_info >= (3, 0)
 
 

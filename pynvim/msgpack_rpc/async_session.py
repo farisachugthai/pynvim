@@ -2,7 +2,6 @@
 import logging
 from traceback import format_exc
 
-
 logger = logging.getLogger(__name__)
 debug, info, warn = (logger.debug, logger.info, logger.warning,)
 

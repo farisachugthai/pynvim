@@ -8,14 +8,14 @@ from traceback import format_stack
 from msgpack import ExtType
 
 from pynvim.api.buffer import Buffer
-from pynvim.api.common import (NvimError, Remote, RemoteApi, RemoteMap, RemoteSequence,
-                               decode_if_bytes, walk)
+from pynvim.api.common import (NvimError, Remote, RemoteApi, RemoteMap,
+                               RemoteSequence, decode_if_bytes, walk)
 from pynvim.api.tabpage import Tabpage
 from pynvim.api.window import Window
 from pynvim.compat import IS_PYTHON3
 from pynvim.util import Version, format_exc_skip
 
-__all__ = ('Nvim')
+__all__ = ['Nvim']
 
 
 os_chdir = os.chdir
@@ -354,10 +354,14 @@ class Nvim(object):
         """Push `keys` to Nvim user input buffer.
 
         Options can be a string with the following character flags:
+
         - 'm': Remap keys. This is default.
+
         - 'n': Do not remap keys.
+
         - 't': Handle keys as if typed; otherwise they are handled as if coming
                from a mapping. This matters for undo, opening folds, etc.
+
         """
         return self.request('nvim_feedkeys', keys, options, escape_csi)
 

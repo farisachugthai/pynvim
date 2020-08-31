@@ -1,7 +1,6 @@
 """API for working with Nvim tabpages."""
 from pynvim.api.common import Remote, RemoteSequence
 
-
 __all__ = ('Tabpage')
 
 

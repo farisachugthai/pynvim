@@ -1,26 +1,33 @@
+import os
 import platform
 import sys
-import os
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 install_requires = [
     'msgpack>=0.5.0',
+    'setuptools'
 ]
-
-needs_pytest = {'pytest', 'test', 'ptr'}.intersection(sys.argv)
-pytest_runner = ['pytest-runner'] if needs_pytest else []
-
-setup_requires = [
-] + pytest_runner,
 
 tests_require = [
     'pytest>=3.4.0',
+    'tox',
 ]
+
+dev_require = [
+        'flake8',
+        'flake8-import-order',
+        'isort',
+        'flake8-isort',
+        'wheel',
+        'twine'
+    ]
 
 extras_require = {
     'pyuv': ['pyuv>=1.0.0'],
+    'docs': ['sphinx', 'sphinx-rtd-theme'],
     'test': tests_require,
+    'dev': dev_require,
 }
 
 if sys.version_info < (3, 4):
@@ -42,11 +49,29 @@ setup(name='pynvim',
       author='Thiago de Arruda',
       author_email='tpadilha84@gmail.com',
       license='Apache',
-      packages=['pynvim', 'pynvim.api', 'pynvim.msgpack_rpc',
-                'pynvim.msgpack_rpc.event_loop', 'pynvim.plugin',
-                'neovim', 'neovim.api'],
+      packages=find_packages(include=["pynvim", "neovim"], exclude=["test"]),
       install_requires=install_requires,
-      setup_requires=setup_requires,
       tests_require=tests_require,
       extras_require=extras_require,
-      zip_safe=False)
+      zip_safe=False,
+
+    test_suite="test",
+    include_package_data=True,
+    package_data={
+        # If any package contains *.txt or *.rst files, include them:
+        "": ["*.txt", "*.rst"],
+    },
+    classifiers=[
+        # Trove classifiers
+        # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Operating System :: Android",
+        "Operating System :: Microsoft :: Windows :: Windows 10",
+        "Operating System :: POSIX:: Linux",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: Implementation :: CPython",
+        ],
+    )

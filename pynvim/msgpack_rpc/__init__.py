@@ -10,7 +10,6 @@ from pynvim.msgpack_rpc.msgpack_stream import MsgpackStream
 from pynvim.msgpack_rpc.session import ErrorResponse, Session
 from pynvim.util import get_client_info
 
-
 __all__ = ('tcp_session', 'socket_session', 'stdio_session', 'child_session',
            'ErrorResponse')
 
